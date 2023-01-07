@@ -1,0 +1,225 @@
+
+section{
+    background-color: black;
+}
+
+#nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+#co{
+    width: 16%;
+    /* align-self: center; */
+    /* padding: 10px; */
+    border: 1px solid black;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    /* align-content: space-around; */
+    /* align-content: space-between; */
+    /* justify-content: space-between; */
+    
+    /* justify-content: center; */
+}
+#anchor{
+    padding-left: 10px;
+    font-size: 25px;
+}
+
+
+#container{
+    display: flex;
+    /* flex-direction: row; */
+    /* margin-top: 20px; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* width: 10%; */
+    background-color: black;
+}
+#co img{
+    height: 250px;
+    width: 100%;
+   
+   
+    /* padding: 0 5px; */
+    /* display: flex; */
+}
+
+#co p{
+    text-align: center;
+    font-weight: 700;
+}
+#shift{
+    padding-top: 10px;
+    /* font-size: 20px; */
+}
+#up{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    padding: 20px;
+    background-color: black;
+}
+
+
+#coo{
+    width: 16%;
+    /* align-self: center; */
+    /* padding: 10px; */
+    border: 1px solid black;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    /* align-content: space-around; */
+    /* align-content: space-between; */
+    /* justify-content: space-between; */
+    
+    /* justify-content: center; */
+}
+
+#coo img{
+    height: 250px;
+    width: 100%;
+   
+   
+    /* padding: 0 5px; */
+    /* display: flex; */
+}
+#coo p{
+    text-align: center;
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+#upp{
+    /* margin-top: 40px; */
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    padding: 20px;
+    background-color: black;
+}
+
+#contained{
+    display: flex;
+    /* flex-direction: row; */
+    /* margin-top: 20px; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* width: 10%; */
+    background-color: black;
+}
+
+
+#cooo{
+    width: 18%;
+    /* align-self: center; */
+    /* padding: 10px; */
+    border: 1px solid black;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    /* align-content: space-around; */
+    /* align-content: space-between; */
+    /* justify-content: space-between; */
+    
+    /* justify-content: center; */
+}
+
+#cooo img{
+    height: 250px;
+    width: 100%;
+   
+   
+    /* padding: 0 5px; */
+    /* display: flex; */
+}
+#cooo p{
+    text-align: center;
+    font-weight: 700;
+    padding: 2px 5px;
+}
+
+
+#search{
+    display: flex;
+    /* flex-direction: row; */
+    margin-top: 90px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* width: 10%; */
+    /* background-color: black; */
+}
+
+
+
+@media (max-width: 490px){
+    body{
+        background-color: black;
+      
+    }
+    #cooo{
+        width: 70%;
+        /* align-self: center; */
+        /* padding: 10px; */
+        border: 1px solid black;
+        background-color: whitesmoke;
+        margin-bottom: 10px;
+        /* align-content: space-around; */
+        /* align-content: space-between; */
+        /* justify-content: space-between; */
+        
+        /* justify-content: center; */
+    }
+
+    #cooo p{
+        text-align: center;
+        font-weight: 700;
+        padding: 5px 7px;
+    }
+
+    #co{
+        width: 70%;
+        /* align-self: center; */
+        /* padding: 10px; */
+        border: 1px solid black;
+        background-color: whitesmoke;
+        margin-bottom: 20px;
+        /* align-content: space-around; */
+        /* align-content: space-between; */
+        /* justify-content: space-between; */
+        
+        /* justify-content: center; */
+    }
+    #up{
+        /* margin-top: 50px; */
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        background-color: black;
+    }
+
+    
+    #coo{
+        width: 70%;
+        /* align-self: center; */
+        /* padding: 10px; */
+        border: 1px solid black;
+        background-color: whitesmoke;
+        margin-bottom: 20px;
+        /* align-content: space-around; */
+        /* align-content: space-between; */
+        /* justify-content: space-between; */
+        
+        /* justify-content: center; */
+    }
+    #upp{
+        /* margin-top: 40px; */
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        background-color: black;
+    }
+}
+

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+<section>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="width: 100%;" id="nav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-center justify-content-center" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Movies/Tv Series</a>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="pages/movies.html">Anime</a>
+              </li>
+               -->
+            </ul>
+            
+            
+          </div>
+        </div>
+      </nav>
+    
+      <div style="text-align: center; margin-top: 10px; margin-top: 55px; background-color: black;"> 
+        <input style="width: 60%; height: 40px; text-align: center;" type="text" name="" id="anime"><span style="font-size: 25px;"><a id="anchor" href="#" onclick="serach()"><i class="fa-solid fa-magnifying-glass high"></i></a></span>
+        
+    </div>
+      
+      
+      
+ 
+        
+     <div id="all">
+      <div id="up">Upcoming Movies</div>
+      
+      <div id="container">
+          
+      </div>
+      
+      
+      <div id="upp">
+          New Movie Update
+      </div>
+      
+      <div id="contained"></div>
+
+     </div>
+      
+      <div id="search"></div>
+      
+
+       
+    
+</section>
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    // import axios from "axios";
+// for home page search
+// const options = {
+//   method: 'GET',
+//   url: 'https://moviesdb5.p.rapidapi.com/om',
+//   params: {s: 'Strange'},
+//   headers: {
+//     'X-RapidAPI-Key': 'd0e581c1a6mshbd1ce190555009bp1e0e37jsn2a7d878ca678',
+//     'X-RapidAPI-Host': 'moviesdb5.p.rapidapi.com'
+//   }
+// };
+
+// axios.request(options).then(function (response) {
+// 	console.log(response.data);
+// }).catch(function (error) {
+// 	console.error(error);
+// });
+
+
+
+
+
+
+let input = document.getElementById('input') 
+let all = document.getElementById('all')
+function home(){
+const options = {
+  method: 'GET',
+  url: 'https://flixster.p.rapidapi.com/movies/get-upcoming',
+  params: {countryId: 'usa', limit: '6'},
+  headers: {
+    'X-RapidAPI-Key': 'd0e581c1a6mshbd1ce190555009bp1e0e37jsn2a7d878ca678',
+    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
+  }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+    console.log(response.data.data.upcoming[0])
+    let container = document.getElementById("container")
+    container.innerHTML = ""
+    for (let i=0; i < 15; i++) {
+    // console.log(response.data.results[i].backdrop_path)
+    let value = `
+        
+        <div id="co">
+          
+          <img src= ${response.data.data.upcoming[i].posterImage.url}>
+       
+         
+          <p id="shift">Title: ${response.data.data.upcoming[i].name}</p>
+          <p id="text">Release Date: ${response.data.data.upcoming[i].releaseDate}</p>
+          
+          
+      </div>  
+      
+
+
+        `
+        container.innerHTML += value
+
+    }
+}).catch(function (error) {
+	console.error(error);
+});
+
+
+}
+
+
+// home()
+
+// import axios from "axios";
+
+function movie(){
+    const options = {
+  method: 'GET',
+  url: 'https://flixster.p.rapidapi.com/movies/get-opening',
+  params: {countryId: 'usa'},
+  headers: {
+    'X-RapidAPI-Key': 'd0e581c1a6mshbd1ce190555009bp1e0e37jsn2a7d878ca678',
+    'X-RapidAPI-Host': 'flixster.p.rapidapi.com'
+  }
+};
+
+axios.request(options).then(function (response) {
+    let contained = document.getElementById("contained")
+    contained.innerHTML = ""
+    for (let i=0; i < 8; i++) {
+    // console.log(response.data.results[i].backdrop_path)
+    let value = `
+        
+        <div id="coo">
+          
+          <img src= ${response.data.data.opening[i].posterImage.url}>
+       
+         
+          <p>Title: ${response.data.data.opening[i].name}</p>
+          
+          
+          
+      </div>  
+      
+
+
+        `
+        contained.innerHTML += value
+
+    }
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+});
+}
+// movie()
+
+
+
+
+
+
+
+function serach(){
+   document.getElementById('all').innerHTML = ""
+const options = {
+  method: 'GET',
+  url: 'https://online-movie-database.p.rapidapi.com/auto-complete',
+  params: {q:`${input.value}`},
+  headers: {
+    'X-RapidAPI-Key': 'd0e581c1a6mshbd1ce190555009bp1e0e37jsn2a7d878ca678',
+    'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
+  }
+};
+
+axios.request(options).then(function (response) {
+	console.log(response.data);
+    console.log(response.data.d[0].l)
+    console.log(response.data.d[0].q)
+    console.log(response.data.d[0].s)
+    console.log(response.data.d[0].i.imageUrl)
+    let search = document.getElementById("search")
+    search.innerHTML= ""
+    for (let i=0; i < 5; i++) {
+    // console.log(response.data.results[i].backdrop_path)
+    let value = `
+        
+        <div id="cooo">
+          
+          <img src= ${response.data.d[i].i.imageUrl}>
+       
+         
+       
+        <p><span>Title:</span> ${response.data.d[i].l}</p>
+          <p><span>Genre:</span> ${response.data.d[i].q}</p>
+          <p><span>Lead Cast:</span> ${response.data.d[i].s}</p>
+       
+          
+          
+      </div>  
+      
+
+
+        `
+        search.innerHTML += value
+
+    }
+}).catch(function (error) {
+	console.error(error);
+});
+}
+
+  </script>
+</body>
+</html>
